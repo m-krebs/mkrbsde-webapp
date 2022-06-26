@@ -1,0 +1,15 @@
+doctype html
+html
+  include login_head.pug
+  body
+    header
+    main
+      form(action='/login', method='post')
+        p Sign in to your account
+        input(type='text', name='username', placeholder='Username')
+        input(type='password', name='password', placeholder='Password')
+        input(type='submit', value='Login')
+    footer
+      p Copyright &copy; 2022
+      p Made by Michael Krebs
+      a(href='https://google.com', target='_blank') Google
