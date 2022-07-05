@@ -1,3 +1,10 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    color: #b2ada4;
+    background: #212324;
+}
+
+.card {
+    background: #1d1f20;
+    padding: 20px;
 }

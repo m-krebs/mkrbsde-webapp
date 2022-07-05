@@ -5,11 +5,11 @@ html
     header
     main
       form(action='/login', method='post')
-        p Sign in to your account
-        input(type='text', name='username', placeholder='Username')
-        input(type='password', name='password', placeholder='Password')
-        input(type='submit', value='Login')
-    footer
-      p Copyright &copy; 2022
-      p Made by Michael Krebs
-      a(href='https://google.com', target='_blank') Google
+        .card
+          .card-title Login to your account
+          .card-group
+            input(type='text', name='username', placeholder='Username')
+          .card-group
+            input(type='password', name='password', placeholder='Password')
+          .card-footer
+            button(type='submit') Sign in
