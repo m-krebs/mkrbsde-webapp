@@ -8,8 +8,11 @@ const livereload = require("livereload")
 const liveReloadServer = livereload.createServer()
 liveReloadServer.watch(path.join(__dirname, 'public'))
 const connectLivereload = require("connect-livereload")
+const favicon = require('serve-favicon')
 
 app.use(connectLivereload())
+
+app.use(favicon(path.join(__dirname, 'public', 'assets', 'images', 'favicon.ico')));
 
 liveReloadServer.server.once("connection", () => {
     setTimeout(() => {
