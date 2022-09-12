@@ -1,10 +1,106 @@
 * {
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
     color: #b2ada4;
-    background: #212324;
 }
 
-.card {
-    background: #1d1f20;
-    padding: 20px;
+body, html {
+    background-color: #212324;
+    height: 100%;
+}
+
+.background {
+    background-image: url("../assets/images/background_main.jpg");
+    /* Add the blur effect */
+    filter: blur(12px);
+    -webkit-filter: blur(15px);
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login {
+    position: absolute;
+    width: 400px;
+    margin: auto;
+    padding-top: 15px;
+    background-color: #212324; /* Fallback color */
+    background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border-radius: 1rem;
+}
+.login h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login form label {
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    /*background-color: #3274d6;*/
+    background-color: #2a14c5;
+    color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"] {
+    font-size: 16px;
+    width: 310px;
+    height: 50px;
+    border: 3px transparent solid;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    outline: none;
+    background-color: #101821;
+    color: #ffffff;
+}
+
+.login form input:focus {
+    outline: none;
+    border-bottom: 2px solid #2a14c5;
+}
+.login form input[type="submit"] {
+    font-size: 20px;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    /*background-color: #3274d6;*/
+    background-color: #2a14c5;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    border-radius: 0 0 15px 15px;
+}
+.login form input[type="submit"]:hover {
+    background-color: #1a03a7;
+    transition: background-color 0.2s;
+}
+
+.login form input[type="submit"]:active {
+    background-color: #0a0548;
+    transition: background-color 0.2s;
+}
+
+.fas.fa-user, .fas.fa-lock, .fas.fa-retweet{
+    color: #ffffff;
 }
