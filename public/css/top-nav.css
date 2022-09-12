@@ -1,0 +1,22 @@
+.top-nav {
+    position: absolute;
+    font-size: 20px;
+    height: 3rem;
+    background-color: rgba(23, 26,26, 0.5);
+    padding: 12px 50px 0 0;
+    z-index: 2;
+    margin: auto;
+    text-align: right;
+    /*float: right;*/
+    width: 100%;
+}
+
+.nav-link{
+    text-decoration: none;
+    margin: 10px;
+    background-color: transparent;
+}
+
+.nav-link:hover{
+    color: #638be6;
+}

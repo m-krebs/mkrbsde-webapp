@@ -1,0 +1,18 @@
+doctype html
+html
+  include login_head.pug
+  body
+    include ../topnav
+    .background
+    .login
+      //h1.card-title Login to your Account
+      form(action='/login', method='post')
+        label(for="username")
+          <!-- font awesome icon -->
+          i(class="fas fa-user")
+        input(type='text', name='username', placeholder='Username', id='username', class='input', required)
+        label(for="password")
+          i(class="fas fa-lock")
+        input(type='password', name='password', placeholder='Password', id='password', class='input', required)
+        a(href='/register') You don't have an account?
+        input(type='submit', value='Login')
