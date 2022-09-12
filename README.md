@@ -1,4 +1,5 @@
 # mkrbsde-webapp
+[![GitHub release](https://img.shields.io/github/release/m-krebs/mkrbsde-webapp)](https://github.com/m-krebs/mkrbsde-webapp/releases/)
 
 This is a little Side-Project of mine.
 
