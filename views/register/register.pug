@@ -1,0 +1,21 @@
+doctype html
+html
+  include register_head.pug
+  body
+    include ../topnav
+    .background
+    .login
+      //h1.card-title Login to your Account
+      form(action='/signup', method='post')
+        label(for="username")
+          <!-- font awesome icon -->
+          i(class="fas fa-user")
+        input(type='text', name='username', placeholder='Username', id='username', class='input', required)
+        label(for="password")
+          i(class="fas fa-lock")
+        input(type='password', name='password', placeholder='Password', id='password', class='input', required)
+        label(for="password_repeat")
+          i(class="fas fa-retweet")
+        input(type='password', name='password_repeat', placeholder='Repeat Password', id='password_repeat', class='input', required)
+        a(href='/login') Already have an account?
+        input(type='submit', value='Register')
