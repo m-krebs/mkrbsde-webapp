@@ -24,6 +24,17 @@ router.get('/login', (req, res) => {
     res.render('login/login.pug')
 });
 
+router.get('/home', userMiddleware.isLoggedIn, function (request, response) {
+    // If the user is loggedin
+    // if (request.session.loggedin) {
+        // Output username
+        response.send('Welcome back, ' + request.session.username + '!');
+    // } else {
+    //     // Not logged in
+    //     response.send('Please login to view this page!');
+    // }
+});
+
 router.post('/signup', userMiddleware.validateRegistration, (req, res, next) => {
     db.query(`SELECT *
               FROM users
@@ -73,23 +84,20 @@ router.post('/login', (req, res, next) => {
          WHERE username = ${uname};`,
         // `SELECT * FROM users WHERE username = ${req.body.username};`,
         (err, result) => {
-            console.log('These are the results: ' + result.toString());
             // user does not exists
             if (err) {
                 return res.status(400).send({
                     msg: err
                 });
             }
-            console.log(result.length);
 
             if (result.length === 0) {
                 return res.status(401).send({
                     msg: 'Username or password is incorrect!'
                 });
             }
-            console.log(result[0].username);
+
             console.log(result[0])
-            console.log(!result.length);
             // check password
             bcrypt.compare(
                 req.body.password,
@@ -116,7 +124,7 @@ router.post('/login', (req, res, next) => {
                              SET last_login = now()
                              WHERE id = '${result[0].id}'`
                         );
-                        return res.redirect('back');
+                        return res.redirect('/home');
                         return res.status(200).send({
                             msg: 'Logged in!',
                             token,
